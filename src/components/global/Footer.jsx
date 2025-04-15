@@ -87,7 +87,6 @@ const Footer = () => {
                 { name: "Home", to: "home" },
                 { name: "Services", to: "services" },
                 { name: "About", to: "about" },
-                { name: "Contact", to: "contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <ScrollLink

@@ -44,8 +44,8 @@ const FAQ = () => {
   };
 
   return (
-    <div className="mt-[120px] max-w-[1400px] w-full mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div className="w-full md:w-6/12">
+    <div className="mt-[60px] md:mt-[120px] max-w-[1400px] w-full mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="md:block hidden w-full md:w-6/12">
         <Image src={faq} alt="faq" width={1000} height={1000} />
       </div>
 

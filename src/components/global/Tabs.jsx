@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import banner from "../../assets/banner.jpg";
@@ -18,16 +18,16 @@ const SlideTabs = () => {
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
-    opacity: 1, // Start visible for active tab
+    opacity: 0, // Start hidden for initial animation
   });
-  const [activeTab, setActiveTab] = useState(0); // Track active tab index
+  const [activeTab, setActiveTab] = useState(0);
 
   const tabContents = [
     {
       title: "Roof Installation",
       content: (
-        <div className="mt-8 text-white flex flex-row items-center justify-center">
-          <div className="w-6/12 flex flex-col gap-4">
+        <div className="mt-8 text-white flex flex-col-reverse md:flex-row items-center justify-center gap-4">
+          <div className="w-full md:w-6/12 flex flex-col gap-4 px-[20px]">
             <h1 className="text-3xl font-sans font-bold">Roof Installation</h1>
             <p className="font-sans text-lg">
               Our roof installation services deliver unmatched durability and
@@ -56,14 +56,14 @@ const SlideTabs = () => {
               </ul>
             </div>
           </div>
-          <div className="max-h-[300px] overflow-hidden w-6/12 px-[20px]">
+          <div className="max-h-[300px] overflow-hidden w-full md:w-6/12 px-[20px]">
             <Image
               src={service2}
               alt="Roof Installation"
               width={600}
               height={400}
               className="object-cover items-center"
-              />
+            />
           </div>
         </div>
       ),
@@ -71,8 +71,8 @@ const SlideTabs = () => {
     {
       title: "Roof Cornering",
       content: (
-        <div className="mt-8 text-white flex flex-row items-center justify-center">
-          <div className="w-6/12 flex flex-col gap-4">
+        <div className="mt-8 text-white flex flex-col-reverse md:flex-row items-center justify-center gap-4">
+          <div className="w-full md:w-6/12 flex flex-col gap-4 px-[20px]">
             <h1 className="text-3xl font-sans font-bold">Roof Cornering</h1>
             <p className="font-sans text-lg">
               Precision roof cornering enhances your home’s aesthetic and
@@ -101,14 +101,14 @@ const SlideTabs = () => {
               </ul>
             </div>
           </div>
-          <div className="max-h-[300px] overflow-hidden w-6/12 px-[20px]">
+          <div className="max-h-[300px] overflow-hidden w-full md:w-6/12 px-[20px]">
             <Image
               src={service5}
               alt="Roof Cornering"
               width={600}
               height={400}
               className="object-cover items-center"
-              />
+            />
           </div>
         </div>
       ),
@@ -116,8 +116,8 @@ const SlideTabs = () => {
     {
       title: "Roof Frame Design",
       content: (
-        <div className="mt-8 text-white flex flex-row items-center justify-center">
-          <div className="w-6/12 flex flex-col gap-4">
+        <div className="mt-8 text-white flex flex-col-reverse md:flex-row items-center justify-center gap-4">
+          <div className="w-full md:w-6/12 flex flex-col gap-4 px-[20px]">
             <h1 className="text-3xl font-sans font-bold">Roof Frame Design</h1>
             <p className="font-sans text-lg">
               Our custom roof frame designs blend strength with architectural
@@ -146,14 +146,14 @@ const SlideTabs = () => {
               </ul>
             </div>
           </div>
-          <div className="max-h-[300px] overflow-hidden w-6/12 px-[20px]">
+          <div className="max-h-[300px] overflow-hidden w-full md:w-6/12 px-[20px]">
             <Image
               src={banner}
               alt="Roof Frame Design"
               width={600}
               height={400}
               className="object-cover items-center"
-              />
+            />
           </div>
         </div>
       ),
@@ -161,8 +161,8 @@ const SlideTabs = () => {
     {
       title: "Roof Layer Fixing",
       content: (
-        <div className="mt-8 text-white flex flex-row items-center justify-center">
-          <div className="w-6/12 flex flex-col gap-4">
+        <div className="mt-8 text-white flex flex-col-reverse md:flex-row items-center justify-center gap-4">
+          <div className="w-full md:w-6/12 flex flex-col gap-4 px-[20px]">
             <h1 className="text-3xl font-sans font-bold">Roof Layer Fixing</h1>
             <p className="font-sans text-lg">
               We restore your roof’s integrity with expert layer fixing. Our
@@ -191,14 +191,14 @@ const SlideTabs = () => {
               </ul>
             </div>
           </div>
-          <div className="max-h-[300px] overflow-hidden w-6/12 px-[20px]">
+          <div className="max-h-[300px] overflow-hidden w-full md:w-6/12 px-[20px]">
             <Image
               src={service3}
               alt="Roof Layer Fixing"
               width={600}
               height={400}
               className="object-cover items-center"
-              />
+            />
           </div>
         </div>
       ),
@@ -206,8 +206,8 @@ const SlideTabs = () => {
     {
       title: "Roof Sliding Corner",
       content: (
-        <div className="mt-8 text-white flex flex-row items-center justify-center">
-          <div className="w-6/12 flex flex-col gap-4">
+        <div className="mt-8 text-white flex flex-col-reverse md:flex-row items-center justify-center gap-4">
+          <div className="w-full md:w-6/12 flex flex-col gap-4 px-[20px]">
             <h1 className="text-3xl font-sans font-bold">
               Roof Sliding Corner
             </h1>
@@ -238,14 +238,14 @@ const SlideTabs = () => {
               </ul>
             </div>
           </div>
-          <div className="max-h-[300px] overflow-hidden w-6/12 px-[20px]">
+          <div className="max-h-[300px] overflow-hidden w-full md:w-6/12 px-[20px]">
             <Image
               src={service4}
               alt="Roof Sliding Corner"
               width={600}
               height={400}
               className="object-cover items-center"
-              />
+            />
           </div>
         </div>
       ),
@@ -269,8 +269,19 @@ const SlideTabs = () => {
         <Cursor position={position} />
       </ul>
 
-      {/* Render active tab content */}
-      <div className="w-full mx-auto">{tabContents[activeTab].content}</div>
+      {/* Render active tab content with animation */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab} // Unique key ensures animation triggers on tab change
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="w-full mx-auto"
+        >
+          {tabContents[activeTab].content}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
@@ -315,8 +326,12 @@ const Tab = ({ children, setPosition, setActiveTab, index, isActive }) => {
 const Cursor = ({ position }) => {
   return (
     <motion.li
-      animate={position}
-      className="absolute z-0 h-7 bg-secondary md:h-12.5"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ ...position, opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="absolute z-0 h-full bg-secondary md:h-12.5"
     />
   );
 };
+
+export default SlideTabsExample;
